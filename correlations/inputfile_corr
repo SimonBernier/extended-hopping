@@ -1,0 +1,31 @@
+input
+    {
+    N = 24
+
+    V = 1
+    Jz = 0.5
+
+    nsweeps = 10
+    sweeps
+        {
+        maxdim  mindim  cutoff  niter  noise
+        50      10      1E-10   2      1E-7
+        100     20      1E-10   2      1E-8
+        200     20      1E-10   2      1E-10
+        400     20      1E-10   2      1E-11
+        800     20      1E-10   2      1E-11
+        800     20      1E-10   2      0
+        }
+
+    sweepsExcited
+        {
+        maxdim  mindim  cutoff  niter  noise
+        50      10      1E-10   2      0
+        100     20      1E-10   2      0
+        200     20      1E-10   2      0
+        400     20      1E-10   2      0
+        800     20      1E-10   2      0
+        }
+
+    silent = yes
+    }
