@@ -35,11 +35,15 @@ s = infsiteinds("Electron", N; initstate, conserve_qns)
 
 function ITensorInfiniteMPS.unit_cell_terms(::Model"extendedHopping"; t, g=0.0)
     opsum = OpSum()
-    # nearest neighbour hopping
+    # nearest neighbour hopping for a unit cell
     opsum += -t, "Cdagup", 1, "Cup", 2
     opsum += -t, "Cdagup", 2, "Cup", 1
     opsum += -t, "Cdagdn", 1, "Cdn", 2
     opsum += -t, "Cdagdn", 2, "Cdn", 1
+    opsum += -t, "Cdagup", 2, "Cup", 3
+    opsum += -t, "Cdagup", 3, "Cup", 2
+    opsum += -t, "Cdagdn", 2, "Cdn", 3
+    opsum += -t, "Cdagdn", 3, "Cdn", 2
     # next-nearest neighbour hopping
     opsum += -t, "Cdagup", 1, "Cup", 3
     opsum += -t, "Cdagup", 3, "Cup", 1
